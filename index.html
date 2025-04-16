@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Repo</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        height: 90vh;
+        background: #8297ff;
+        background: linear-gradient(
+          316deg,
+          rgba(61, 94, 255, 1) 0%,
+          rgba(26, 26, 84, 1) 100%
+        );
+      }
+      .select-container {
+        border: 1px solid grey;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 0 10px 0 10px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .select-container p {
+        pointer-events: none;
+      }
+
+      .select-lang {
+        background: #e8e8e8;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        font-size: 14px;
+        padding: 20px;
+      }
+
+      h3 {
+        color: black;
+        margin: 0 0 10px 0;
+      }
+
+      .button {
+        background: #0366d6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 500;
+        text-decoration: none;
+        user-select: none;
+      }
+
+      .button:hover {
+        background-color: #004ca2;
+      }
+
+      .container {
+        width: 100%;
+        margin: 100px auto;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #f6f8fa; /* GitHub's lightest background tone */
+        border: 1px solid #e1e4e8; /* Very light border */
+        box-shadow: 0 2px 10px rgba(27, 31, 35, 0.05); /* GitHub-style shadow */
+      }
+      .display {
+        display: none;
+      }
+
+      .dropdown {
+        border: 1px solid gray;
+        margin-bottom: 10px;
+        position: absolute;
+        width: 498px;
+        background-color: white;
+        user-select: none;
+      }
+      
+      .dropdown p {
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px dashed black;
+        user-select: none;
+      }
+
+      .dropdown p:last-child {
+        border: none;
+      }
+
+      .dropdown p:hover {
+        background-color: #ccc;
+        cursor: pointer;
+      }
+
+      .bold {
+        background: #e8e8e8;
+        user-select: none;
+        padding-bottom: 0;
+      }
+
+      .circle {
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: yellow;
+        color: yellow;
+      }
+
+      .detail {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      /* Loading State */
+      .refresh-btn.loading .btn-text {
+        opacity: 0.7;
+      }
+
+      .button.err {
+        background-color: red;
+      }
+      .button.err:hover{
+        background-color: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Github random repo finder</h1>
+      <div class="select-container">
+        <p>Select a languange</p>
+        <p>▼</p>
+      </div>
+      <div class="dropdown display">
+        <p data-value="Python">python</p>
+        <p data-value="javascript">javascript</p>
+        <p data-value="ruby">ruby</p>
+      </div>
+      <div class="select-lang">
+        <span class="loading-spinner" hidden></span>
+        <p>Select a languange</p>
+      </div>
+      <a href="#" class="button err">Refresh</a>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
